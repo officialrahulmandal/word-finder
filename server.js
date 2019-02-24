@@ -6,10 +6,10 @@ import bodyParser from 'body-parser';
 import fs from 'fs';
 // importing words file to perform search operations
 import { search } from './lib/words';
-// importing app 
+// importing app
 const app = express();
 
-// creating a variable named dictionary to parse the json i.e stored in anither file 
+// creating a variable named dictionary to parse the json i.e stored in anither file
 const dictionary = JSON.parse(
   fs.readFileSync('./lib/dictionary.json')
 ).dictionary;
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-// route for homepage url
+// route for homepage
 app.get('/', (req, res) => {
   res.render('api/index', {
     pattern: '',
@@ -57,7 +57,7 @@ app.get('/api/search', (req, res) => {
   });
 });
 
-// post route for search
+// post route for word search
 app.post('/search', function (req, res) {
   res.render('result', {
     words: search(req.body.pattern, dictionary).result,

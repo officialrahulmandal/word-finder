@@ -1,39 +1,57 @@
+<!--Template for Word finder homepage-->
 <html>
     <head>
+        <!--title of homepage-->
         <title>Word Finder REST API</title>
+        <!--some basic info for SEO-->
         <meta name="version" content="1.0">
+        <!--setting the path for css file for styling-->
         <link rel="stylesheet" href="/public/api.css" />
     </head>
     <body>
+        <!--heading of the page-->
         <h1>Word Finder REST API</h1>
 
+        <!--form for taking input from the user-->
+        <!--taking input from user and calling the get api route of search-->
         <form id="perform-search" name="perform-search" method="get" action="/api/search">
+            <!--label-->
             <label for="search-text">Search text:</label>
+            <!--input box for taking input-->
             <input id="search-text" name="search-text" type="text" value="<%= pattern %>" />
+            <!--submit button-->
             <input type="submit" />
         </form>
 
+        <!--if word results is not equal to zero -->
         <% if(words.length != 0) { %>
+            <!--show number of search result  count along with Words count-->
             <p id="search-result-count" data-count="<%= words.length %>">Words found: <%= words.length %></p>
+        <!--showing the total number of search results along with a link that can be clicked and find the meanings of the word-->
         <ul id="search-result" name="search-results">
+            <!--making a loop on all the words for which we find a suitable match-->
             <% for(var i = 0; i < words.length; i++) { %>
                 <li><a id="<%= words[i] %>" rel="external help" href="https://www.google.com/search?q=define <%= words[i] %>" target="_blank"><%= words[i] %></a></li>
             <% } %>
             </ul>
         <% } %>
 
+
         <% if(pattern && pattern.length != 0) { %>
             <p>Permalink:</p>
             <a rel="bookmark" href="<%= permalink %>"> <%= pattern %> </a>
         <% } %>
 
+        <!--Some instruction about the api we are using -->
         <h2>REST API Usage Instructions</h2>
 
+        <!--paragraph with some fine details-->
         <p>
            I took every english word (over 200k words) and built a little REST API
            that will help you find words that contain specific characters.
         </p>
 
+        <!--some examples of words functionality-->
         <p>
             Enter a word using _ and ? as needed for unknown characters. Using ? means to include letters that aren't already used (you can think of it as a "Wheel of Fortune" placeholder). Using _ will find words that contain any character (whether it's currently "revealed" or not).
             <br />
@@ -62,6 +80,7 @@
             </ul>
         </p>
 
+        <!--example of how to use this rest api using Ruby-->
         <aside>
             <p>
                 Here is an example of how to interact with this REST API using Ruby:
