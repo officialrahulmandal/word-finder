@@ -1,14 +1,22 @@
+<!--Template for header-->
 <!DOCTYPE html>
 <html>
   <head>
+      <!--title the templaes-->
     <title>Word Finder</title>
+      <!--some meta tags for SEO-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--importing jquery-->
     <script src="/public/jquery-1.8.0.js"></script>
+      <!--importing styling-->
     <link rel="stylesheet" href="/public/bootstrap.css" />
+      <!--importing bootstrap-->
     <script src="/public/bootstrap.js"></script>
+      <!--importing custom css-->
     <link rel="stylesheet" href="/public/app.css" />
   </head>
   <body>
+    <!--division for navigation bar-->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -26,6 +34,7 @@
       </div>
     </div>
 
+    <!--division for dashboard-->
     <div class="container">
       <div id="dashboard">
         <div class="row">
@@ -37,7 +46,7 @@
           <hr/>
         </div>
 
-
+          <!--division for searchbar-->
         <div class="row">
             <p>Enter a word, use _ and ? as needed (see instructions below)</p>
           <form method="post" action="search">

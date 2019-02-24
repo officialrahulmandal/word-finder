@@ -1,14 +1,18 @@
+<!--importing headers-->
 <% include header %>
 
-<p> 
+<!--Showing the words length-->
+<p>
   Words found: <%= words.length %>
 </p>
 
 <hr/>
 
+<!--creating a google link for all the words  -->
 <% for(var i = 0; i < words.length; i++) { %>
   <a href="https://www.google.com/search?q=define <%= words[i] %>" target="_blank"><%= words[i] %></a><br/>
 <% } %>
 <hr/>
 
+<!--importing footers-->
 <% include footer %>
