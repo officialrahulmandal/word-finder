@@ -1,12 +1,11 @@
-// importing express
+// Express 3.x is a light-weight web application framework to help organize your web application into an MVC architecture on the server side. You can use a variety of choices for your templating language (like EJS, Jade, and Dust.js).
 import express from 'express';
-// importing encrypted body content
+// body parser library parses incoming request bodies in a middleware before your handlers, available under the req.body property. in simple words it simply extract out the necessary information out of request body.
 import bodyParser from 'body-parser';
-// importing filesystem to perform file operations
+// importing filesystem to perform filesystem operations
 import fs from 'fs';
 // importing words file to perform search operations
 import { search } from './lib/words';
-// importing app
 const app = express();
 
 // creating a variable named dictionary to parse the json i.e stored in anither file
